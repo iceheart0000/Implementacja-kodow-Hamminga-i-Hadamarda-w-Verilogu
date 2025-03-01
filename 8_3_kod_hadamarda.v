@@ -118,6 +118,6 @@ module hadamard_glowne;
     
     initial begin
         $dumpfile( "wyniki_hadamard.vcd");
-        $dumpvars(1, wektor_wejsciowy, slowo_kodowe_indeks, wek, slowo_kodowe_indeks2, wektor_wyjsciowy );
+        $dumpvars(0, wektor_wejsciowy, slowo_kodowe_indeks, wek, slowo_kodowe_indeks2, wektor_wyjsciowy );
     end
 endmodule
