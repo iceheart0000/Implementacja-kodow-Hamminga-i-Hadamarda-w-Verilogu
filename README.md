@@ -4,7 +4,7 @@
 ### 1st module (Encoder):
 Codes 32 bit messages into codewords by calculating 6 parity bits and inserting them at the positions of powers of two. Other positions are filled with information bits of the initial message.
 ### 2nd module:
-Loads 38 bit codewords that left the encoder but all codewords have least singnificant bit inverted by xor operation. After that, syndrome bits are calculated, and error positon detection and correction is done with the usage of „blad_poz” array, that consists of all (6) calculated syndrome bits. At the end of this module, corrected 38 bit codewords, and 32 bit decoded messages are shown. 
+Loads 38 bit codewords that left the encoder but all codewords have least singnificant bit inverted by xor operation. After that, syndrome bits are calculated, and error detection and correction is done with the usage of „blad_poz” array, that consists of all (6) calculated syndrome bits. At the end of this module, corrected 38 bit codewords, and 32 bit decoded messages are shown. 
 
 ### 3rd module (testbench): 
 Executes every functionality from previous modules for a number of iterations specified in the for loop. All signals are saved to the „wyniki_hamming.vcd” file. Signals can be read with gtkwave.
