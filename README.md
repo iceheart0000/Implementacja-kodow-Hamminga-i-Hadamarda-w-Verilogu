@@ -13,6 +13,6 @@ Executes every functionality from previous modules for a number of iterations sp
 ### 1st module (Encoder):
 Codes 3 bit messages into 8 bit codewords by XOR multiplication of generator matrix rows by 3 bit messages.
 ### 2nd module: 
-Counts the difference between 8 bit codewords with a single-bit error and the rows of the code word matrix. The row, for which difference is the smallest, is the corrected output 8 bit codeword. Decoding 8 bit code words to 3 bit messages is done by switch statements xd
+Counts the hammming distance between 8 bit codewords with a single-bit error and the rows of the code word matrix. The row, for which difference is the smallest, is the corrected output 8 bit codeword. Decoding 8 bit code words to 3 bit messages is done by switch statements xd
 ### 3rd module (testbench): 
 Executes every functionality from previous modules for a number of iterations specified in the for loop. All signals are saved to the „wyniki_hadamarda.vcd” file. Signals can be read with gtkwave.
