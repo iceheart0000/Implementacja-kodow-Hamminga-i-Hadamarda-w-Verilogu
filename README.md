@@ -1,4 +1,4 @@
-# Project consisting of two Verilog programs: (38, 32) Hamming code, and (8, 3) Hadamard code.
+# Verilog implementation of: (38, 32) Hamming code, and (8, 3) Hadamard code.
 
 ## First program - (38, 32) Hamming Code implementation:
 ### 1st module (Encoder):
