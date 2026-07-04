@@ -1,18 +1,25 @@
-# Verilog implementation of: (38, 32) Hamming code, and (8, 3) Hadamard code.
+# Implementacja w Verilogu: kodu Hamminga (38, 32) oraz kodu Hadamarda (8, 3)
 
-## First program - (38, 32) Hamming Code implementation:
-### 1st module (Encoder):
-Codes 32 bit messages into codewords by calculating 6 parity bits and inserting them at the positions of powers of two. Other positions are filled with information bits of the initial message.
-### 2nd module:
-Loads 38 bit codewords that left the encoder but all codewords have least singnificant bit inverted by xor operation. After that, syndrome bits are calculated, and error detection and correction is done with the usage of „blad_poz” array, that consists of all (6) calculated syndrome bits. At the end of this module, corrected 38 bit codewords, and 32 bit decoded messages are shown. 
+## Pierwszy program – implementacja kodu Hamminga (38, 32)
 
-### 3rd module (testbench): 
-Executes every functionality from previous modules for a number of iterations specified in the for loop. All signals are saved to the „wyniki_hamming.vcd” file. Signals can be read with gtkwave.
+### 1. Moduł (Enkoder / Encoder)
+Koduje 32-bitowe wiadomości na słowa kodowe poprzez obliczenie 6 bitów parzystości i umieszczenie ich na pozycjach będących potęgami dwójki. Pozostałe pozycje są wypełniane bitami informacyjnymi wiadomości początkowej.
 
-## Second program - (8, 3) Hadamard Code implementation:
-### 1st module (Encoder):
-Codes 3 bit messages into 8 bit codewords by XOR multiplication of generator matrix rows by 3 bit messages.
-### 2nd module: 
-Counts the hammming distance between 8 bit codewords with a single-bit error and the rows of the code word matrix. The row, for which difference is the smallest, is the corrected output 8 bit codeword. 
-### 3rd module (testbench): 
-Executes every functionality from previous modules for a number of iterations specified in the for loop. All signals are saved to the „wyniki_hadamard.vcd” file. Signals can be read with gtkwave.
+### 2. Moduł (Dekoder / Decoder)
+Wczytuje 38-bitowe słowa kodowe opuszczające enkoder, przy czym we wszystkich słowach kodowych najmniej znaczący bit (LSB) zostaje zanegowany operacją XOR. Następnie obliczane są bity syndromu, a detekcja i korekcja błędów odbywa się przy użyciu tablicy `blad_poz`, która składa się ze wszystkich (6) obliczonych bitów syndromu. Na końcu tego modułu wyprowadzane są poprawione 38-bitowe słowa kodowe oraz zdekodowane 32-bitowe wiadomości.
+
+### 3. Moduł (Testbench)
+Wykonuje wszystkie funkcjonalności z poprzednich modułów przez liczbę iteracji określoną w pętli `for`. Wszystkie sygnały są zapisywane do pliku `wyniki_hamming.vcd`. Sygnały można odczytać za pomocą programu GTKWave.
+
+---
+
+## Drugi program – implementacja kodu Hadamarda (8, 3)
+
+### 1. Moduł (Enkoder / Encoder)
+Koduje 3-bitowe wiadomości na 8-bitowe słowa kodowe poprzez mnożenie XOR wierszy macierzy generatora przez 3-bitowe wiadomości.
+
+### 2. Moduł (Dekoder / Decoder)
+Zlicza odległość Hamminga między 8-bitowymi słowami kodowymi z błędem jednobitowym a wierszami macierzy słów kodowych. Wiersz, dla którego różnica jest najmniejsza, stanowi poprawione, wyjściowe 8-bitowe słowo kodowe.
+
+### 3. Moduł (Testbench)
+Wykonuje wszystkie funkcjonalności z poprzednich modułów przez liczbę iteracji określoną w pętli `for`. Wszystkie sygnały są zapisywane do pliku `wyniki_hadamard.vcd`. Sygnały można odczytać za pomocą programu GTKWave.
